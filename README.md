@@ -2,8 +2,8 @@ A set of Java packages created by Chris Engelsma.
 Applications dwell in the realm of graphics, visualization and image
 processing.
 
-(1) Getting the source code
-----------------------------
+Getting the source code
+-----------------------
 
 To build CAE from source, you must first use git to check the repository
 out from GitHub (http://www.github.com/chrisengelsma/csm)
@@ -11,8 +11,8 @@ out from GitHub (http://www.github.com/chrisengelsma/csm)
 bin/ - platform-dependent scripts (for running demos)
 src/ - source code files (e.g., main/java/cae/paint/Painting3.java)
 
-(2) Tools for building
-----------------------
+Tools for building
+------------------
 
 To build CAE, you need these freely available tools:
 * Java SE JDK 6.0 (or later):
@@ -27,13 +27,13 @@ To build CAE, you need these freely available tools:
     to build and run the applications contained within the JTK please refer to
     http://boole.mines.edu/jtk/trunk/readme.txt
 
-(3) Building CAE
-----------------
+Building CAE
+------------
 
 Navigate to the top directory and run `gradlew build`.
 
-(4) Using CAE
--------------
+Using CAE
+---------
 
 After you have built CAE, you should have a JAR file 
 [...]/build/libs/cae.jar.
@@ -81,8 +81,8 @@ set CLASSPATH=^
 By adding the cae.jar to the classpath this allows you to call classes that
 are included in CAE. 
 
-(5) 3-D graphics in CAE
------------------------
+3-D graphics in CAE
+-------------------
 
 The packages used for 3-D graphics are built on JOGL, a java binding for the
 OpenGL API. Like the Mines JTK, JOGL provides both JAR files and JNI
@@ -91,8 +91,8 @@ likely to become part of standard Java Runtime Environment. Until then, the
 JAR files and JNI libraries for JOGL are provided with the Mines JTK for most
 platforms.
 
-(6) Demos
----------
+Demos
+-----
 
 Demos are located in cae/bin and are platform-dependent scripts. 
 Parameters in these scripts must be changed to match your system in order to 
