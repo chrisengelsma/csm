@@ -1,0 +1,47 @@
+apply plugin: 'java'
+
+defaultTasks 'jar'
+
+description = 'Java packages made by Chris Engelsma while at Mines'
+
+// tag::wrapper[]
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.3'
+}
+// end::wrapper[]
+
+// tag::repositories[]
+repositories {
+  mavenCentral()
+}
+// end::repositories[]
+
+// tag::sourceSets[]
+sourceSets {
+  main {
+    output.resourcesDir = output.classesDir
+  }
+  test {
+    output.resourcesDir = output.classesDir
+  }
+}
+// end::sourceSets[]
+
+// tag::jar[]
+jar {
+  baseName 'almanac-converter'
+  duplicatesStrategy = 'exclude'
+  manifest {
+    attributes 'Implementation-Title': project.description
+  }
+  from sourceSets.test.output
+}
+// end::jar[]
+
+// tag::dependencies[]
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+dependencies {
+  compile fileTree('libs')
+}
+// end::dependencies[]
