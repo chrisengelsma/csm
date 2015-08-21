@@ -1,28 +1,13 @@
-Chris Engelsma's Java repository
---------------------------------
-
-** Table of Contents **
-(1) Getting the source code
-(2) Tools for buildling
-(3) Building CAE
-(4) Using CAE
-(5) 3-D graphics in CAE
-(6) Demos
-
-
-CAE is a set of Java packages created by Chris Engelsma.
+A set of Java packages created by Chris Engelsma.
 Applications dwell in the realm of graphics, visualization and image
 processing.
 
 (1) Getting the source code
 ----------------------------
 
-To build CAE from source, you must first use Subversion (SVN)
-client software to checkout (co) the source code from the SVN repository:
-http://boole.mines.edu/cae.
+To build CAE from source, you must first use git to check the repository
+out from GitHub (http://www.github.com/chrisengelsma/csm)
 
-After SVN checkout, you should have a directory cae/trunk with the following
-subdirectories:
 bin/ - platform-dependent scripts (for running demos)
 src/ - source code files (e.g., main/java/cae/paint/Painting3.java)
 
@@ -32,10 +17,10 @@ src/ - source code files (e.g., main/java/cae/paint/Painting3.java)
 To build CAE, you need these freely available tools:
 * Java SE JDK 6.0 (or later):
   http://www.oracle.com/technetwork/java/javase/downloads
-* Apache Ant 1.6 (or later):
-  http://ant.apache.org
+* Gradle 2.3
+  http://gradle.org
 * Mines Java Toolkit (JTK)
-  http://boole.mines.edu/jtk
+  http://www.github.com/dhale/jtk
     Managed by Dave Hale and others at the Colorado School of Mines.
     CAE strongly relies on packages contained within this toolkit.
     It may be checked out and built via SVN. For further instructions on how 
@@ -45,26 +30,13 @@ To build CAE, you need these freely available tools:
 (3) Building CAE
 ----------------
 
-To build CAE you may use the same scripts for running Ant as provided by the
-Mines JTK in jtk/trunk/bin. (This is explained further in the JTK readme file
-referenced above). Navigate to cae/trunk (the one that directory that contains
-build.xml) and open build.xml with any text editor.
-
-On line 17 in build.xml, should be a line that states: 
-
-<property name="jtk" value="..."/>
-
-edit the value path "..." to have the location of the Mines JTK trunk (the
-directory that contains the JTK build.xml).
-
-Then type "antrun" (or whatever you call this script) and this should build
-CAE.
+Navigate to the top directory and run `gradlew build`.
 
 (4) Using CAE
 -------------
 
 After you have built CAE, you should have a JAR file 
-cae/trunk/build/jar/cae.jar.
+[...]/build/libs/cae.jar.
 You may include this JAR file as a classpath when running Java.
 
 Some packages (e.g. cae.paint) require Java native interface (JNI) libraries
@@ -81,26 +53,30 @@ done using a scripting language such as sh or csh as follows:
 
 Using bash, sh or ksh (Unix/Mac):
 
+```bash
 export CAE_HOME=/directories/to/cae/trunk
 export CLASSPATH=\
 $CAE_HOME/build/jar/cae.jar:\
-# more jars here
 .
+```
 
 Using csh or tcsh (Unix/Mac):
 
+```csh
 setenv CAE_HOME /directories/to/cae/trunk
 setenv CLASSPATH ${CAE_HOME}/build/jar/cae.jar:
 # more jars here
 setenv CLASSPATH ${CLASSPATH}:.
+```
 
 Using a batch file (Windows):
 
+```bat
 set CAE_HOME=C:\path\to\cae\trunk
 set CLASSPATH=^
 %CAE_HOME%\build\jar\cae.jar;^
-rem more jars here
 .
+```
 
 By adding the cae.jar to the classpath this allows you to call classes that
 are included in CAE. 
