@@ -29,7 +29,7 @@ To build CAE, you need these freely available tools:
     CAE strongly relies on packages contained within this toolkit.
     It may be checked out and built via SVN. For further instructions on how 
     to build and run the applications contained within the JTK please refer to
-    http://boole.mines.edu/jtk/trunk/readme.txt
+    the JTK's readme.
 
 Building CAE
 ------------
