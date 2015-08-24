@@ -1,3 +1,7 @@
+## Chris Engelsma's Personal Repository [![Build Status](https://travis-ci.org/chrisengelsma/csm.svg)](https://travis-ci.org/chrisengelsma/csm)
+
+(Note: I'm still dusting the cobwebs off a lot of this code, so it does not build yet)
+
 A set of Java packages created by Chris Engelsma.
 Applications dwell in the realm of graphics, visualization and image
 processing.
